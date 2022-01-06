@@ -28,9 +28,9 @@ namespace AuthorBlazor.Data.Implementations
             using HttpClient client = new();
             string authorAsJson = JsonSerializer.Serialize(newAuthor);
             StringContent authorStringContent = new(authorAsJson, Encoding.UTF8, "application/json");
-            HttpResponseMessage responseMessage = await client.PostAsync($"{URL}/Author/{newAuthor.Id}", authorStringContent);
+            HttpResponseMessage responseMessage =
+                await client.PostAsync($"{URL}/Author/{newAuthor.Id}", authorStringContent);
             return $"{responseMessage.StatusCode} | {responseMessage.Content.ReadAsStringAsync().Result}";
         }
-
     }
 }

@@ -1,0 +1,66 @@
+@page "/ViewBooks"
+@using AuthorBlazor.Data
+@using AuthorBlazor.Models
+@inject IAuthorHandler _authorHandler
+@inject NavigationManager _navigationManager
+<h3>ViewBooks</h3>
+
+@if (_authors == null)
+{
+    <p>
+        <em>Loading...</em>
+    </p>
+}
+else if (!_authors.Any())
+{
+    <p>
+        <em>No Authors exist. Please add some.</em>
+    </p>
+}
+else
+{
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Title</th>
+            <th>Publisher Year</th>
+            <th>Pages</th>
+            <th>Author First Name</th>
+            <th>Author Last Name</th>
+            <th>Delete</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (Author author in _authors)
+        {
+            <tr>
+                @*
+                <td>@author.Book.FirstOrDefault().Title</td>
+                <td>@author.Book.FirstOrDefault().PublicationYear</td>
+                <td>@author.Book.FirstOrDefault().NumOfPages</td>
+                @
+                <td>@author.FirstName</td>
+                <td>@author.LastName</td>
+
+                @
+            <td>
+                        <button @onclick="@(() => RemovePerson(item.Id))">
+                            <i class="oi oi-trash" style="color: #ff0000"/>
+                        </button>
+                    </td>
+*@
+            </tr>
+        }
+        </tbody>
+    </table>
+}
+
+@code {
+    private IList<Author> _authors;
+
+    protected override async  Task OnInitializedAsync()
+    {
+        _authors = await _authorHandler.GetAuthorsAsync();
+    }
+
+}

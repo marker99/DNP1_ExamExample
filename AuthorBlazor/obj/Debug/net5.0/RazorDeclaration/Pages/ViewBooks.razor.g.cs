@@ -4,7 +4,7 @@
 #pragma warning disable 0649
 #pragma warning disable 0169
 
-namespace AuthorBlazor.Shared
+namespace AuthorBlazor.Pages
 {
     #line hidden
     using System;
@@ -82,7 +82,22 @@ using AuthorBlazor.Shared;
 #line default
 #line hidden
 #nullable disable
-    public partial class NavMenu : Microsoft.AspNetCore.Components.ComponentBase
+#nullable restore
+#line 2 "C:\Users\Frederik\RiderProjects\DNP1_ExamExample\AuthorBlazor\Pages\ViewBooks.razor"
+using AuthorBlazor.Data;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 3 "C:\Users\Frederik\RiderProjects\DNP1_ExamExample\AuthorBlazor\Pages\ViewBooks.razor"
+using AuthorBlazor.Models;
+
+#line default
+#line hidden
+#nullable disable
+    [Microsoft.AspNetCore.Components.RouteAttribute("/ViewBooks")]
+    public partial class ViewBooks : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -90,21 +105,21 @@ using AuthorBlazor.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 33 "C:\Users\Frederik\RiderProjects\DNP1_ExamExample\AuthorBlazor\Shared\NavMenu.razor"
+#line 58 "C:\Users\Frederik\RiderProjects\DNP1_ExamExample\AuthorBlazor\Pages\ViewBooks.razor"
        
-    private bool collapseNavMenu = true;
+    private IList<Author> _authors;
 
-    private string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
-
-    private void ToggleNavMenu()
+    protected override async  Task OnInitializedAsync()
     {
-        collapseNavMenu = !collapseNavMenu;
+        _authors = await _authorHandler.GetAuthorsAsync();
     }
 
 
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager _navigationManager { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IAuthorHandler _authorHandler { get; set; }
     }
 }
 #pragma warning restore 1591

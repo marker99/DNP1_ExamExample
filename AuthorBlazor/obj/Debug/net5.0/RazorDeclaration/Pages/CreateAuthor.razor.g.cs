@@ -4,7 +4,7 @@
 #pragma warning disable 0649
 #pragma warning disable 0169
 
-namespace AuthorBlazor.Shared
+namespace AuthorBlazor.Pages
 {
     #line hidden
     using System;
@@ -82,7 +82,22 @@ using AuthorBlazor.Shared;
 #line default
 #line hidden
 #nullable disable
-    public partial class NavMenu : Microsoft.AspNetCore.Components.ComponentBase
+#nullable restore
+#line 2 "C:\Users\Frederik\RiderProjects\DNP1_ExamExample\AuthorBlazor\Pages\CreateAuthor.razor"
+using AuthorBlazor.Models;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 3 "C:\Users\Frederik\RiderProjects\DNP1_ExamExample\AuthorBlazor\Pages\CreateAuthor.razor"
+using AuthorBlazor.Data;
+
+#line default
+#line hidden
+#nullable disable
+    [Microsoft.AspNetCore.Components.RouteAttribute("/CreateAuthor")]
+    public partial class CreateAuthor : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -90,21 +105,27 @@ using AuthorBlazor.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 33 "C:\Users\Frederik\RiderProjects\DNP1_ExamExample\AuthorBlazor\Shared\NavMenu.razor"
+#line 37 "C:\Users\Frederik\RiderProjects\DNP1_ExamExample\AuthorBlazor\Pages\CreateAuthor.razor"
        
-    private bool collapseNavMenu = true;
+    private Author _newAuthor;
 
-    private string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
-
-    private void ToggleNavMenu()
+    protected override async Task OnInitializedAsync()
     {
-        collapseNavMenu = !collapseNavMenu;
+        _newAuthor = new();
+    }
+
+    private void AddNewAuthor()
+    {
+        _authorHandler.AddAuthorAsync(_newAuthor);
+        _navMgr.NavigateTo("/");
     }
 
 
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager _navMgr { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IAuthorHandler _authorHandler { get; set; }
     }
 }
 #pragma warning restore 1591

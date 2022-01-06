@@ -1,6 +1,51 @@
 @page "/CreateAuthor"
+@using AuthorBlazor.Models
+@using AuthorBlazor.Data
+
+@inject IAuthorHandler _authorHandler
+@inject NavigationManager _navMgr
+
 <h3>CreateAuthor</h3>
 
+<EditForm Model="@_newAuthor" OnValidSubmit="@AddNewAuthor">
+    <DataAnnotationsValidator/>
+    <ValidationSummary/>
+
+    <h5>Personal Information</h5>
+    <div class="form-group">
+        <table class="border-bottom border-top border-dark m-2">
+            <tr>
+                <td class="p-1">First Name</td>
+                <td class="p-1">
+                    <InputText @bind-Value="_newAuthor.FirstName"/>
+                </td>
+            </tr>
+            <tr>
+                <td class="p-1">Last Name</td>
+                <td class="p-1">
+                    <InputText @bind-Value="_newAuthor.LastName"/>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <p class="actions">
+        <button class="btn btn-outline-dark btn-primary" type="submit">Add Adult</button>
+    </p>
+</EditForm>
+
 @code {
-    
+    private Author _newAuthor;
+
+    protected override async Task OnInitializedAsync()
+    {
+        _newAuthor = new();
+    }
+
+    private void AddNewAuthor()
+    {
+        _authorHandler.AddAuthorAsync(_newAuthor);
+        _navMgr.NavigateTo("/");
+    }
+
 }
