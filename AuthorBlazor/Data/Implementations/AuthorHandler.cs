@@ -6,14 +6,21 @@ namespace AuthorBlazor.Data.Implementations
 {
     public class AuthorHandler : IAuthorHandler
     {
-        public Task<IList<Author>> GetAuthorsAsync()
+        private static RestClient _restClient;
+
+        public AuthorHandler()
         {
-            throw new System.NotImplementedException();
+            _restClient = new RestClient();
         }
 
-        public Task AddAuthorAsync(Author newAuthor)
+        public async Task<IList<Author>> GetAuthorsAsync()
         {
-            throw new System.NotImplementedException();
+            return await _restClient.GetAllAuthors();
+        }
+
+        public async Task AddAuthorAsync(Author newAuthor)
+        {
+            await _restClient.AddAuthorAsync(newAuthor);
         }
     }
 }
