@@ -7,4 +7,4 @@ build_property.PublishSingleFile =
 build_property.IncludeAllContentForSelfExtract = 
 build_property._SupportedPlatformList = Android,iOS,Linux,macOS,Windows
 build_property.RootNamespace = AuthorAPI
-build_property.ProjectDir = C:\Users\frede\RiderProjects\DNP1_ExamExample\AuthorAPI\
+build_property.ProjectDir = C:\Users\Frederik\RiderProjects\DNP1_ExamExample\AuthorAPI\

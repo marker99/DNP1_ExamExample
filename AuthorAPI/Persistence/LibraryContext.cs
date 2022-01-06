@@ -11,7 +11,7 @@ namespace AuthorAPI.Persistence
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             //name of database
-            optionsBuilder.UseSqlite(@"Data Source = C:\Users\frede\RiderProjects\DNP1_ExamExample\AuthorAPI\Library.db");
+            optionsBuilder.UseSqlite(@"Data Source = C:\Users\Frederik\RiderProjects\DNP1_ExamExample\AuthorAPI\Library.db");
         }
     }
 }

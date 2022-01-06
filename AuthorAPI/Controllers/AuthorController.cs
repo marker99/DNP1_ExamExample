@@ -64,5 +64,26 @@ namespace AuthorAPI.Controllers
                 return StatusCode(500, e.Message);
             }
         }
+        
+        /*[HttpPost]
+        public async Task<ActionResult<Author>> AddAuthor([FromBody] Author author)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            try
+            {
+                Author added = await _authorService.AddAuthorAsync(author);
+                return Created($"/{added.Id}", added);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return StatusCode(500, e.Message);
+            }
+        }*/
+        
     }
 }

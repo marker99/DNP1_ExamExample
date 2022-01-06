@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\frede\\RiderProjects\\DNP1_ExamExample\\AuthorAPI\\AuthorAPI.csproj": {}
+    "C:\\Users\\Frederik\\RiderProjects\\DNP1_ExamExample\\AuthorAPI\\AuthorAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\frede\\RiderProjects\\DNP1_ExamExample\\AuthorAPI\\AuthorAPI.csproj": {
+    "C:\\Users\\Frederik\\RiderProjects\\DNP1_ExamExample\\AuthorAPI\\AuthorAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\frede\\RiderProjects\\DNP1_ExamExample\\AuthorAPI\\AuthorAPI.csproj",
+        "projectUniqueName": "C:\\Users\\Frederik\\RiderProjects\\DNP1_ExamExample\\AuthorAPI\\AuthorAPI.csproj",
         "projectName": "AuthorAPI",
-        "projectPath": "C:\\Users\\frede\\RiderProjects\\DNP1_ExamExample\\AuthorAPI\\AuthorAPI.csproj",
-        "packagesPath": "C:\\Users\\frede\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\frede\\RiderProjects\\DNP1_ExamExample\\AuthorAPI\\obj\\",
+        "projectPath": "C:\\Users\\Frederik\\RiderProjects\\DNP1_ExamExample\\AuthorAPI\\AuthorAPI.csproj",
+        "packagesPath": "C:\\Users\\Frederik\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Frederik\\RiderProjects\\DNP1_ExamExample\\AuthorAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\frede\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Frederik\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"

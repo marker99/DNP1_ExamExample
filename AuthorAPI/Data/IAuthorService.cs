@@ -8,6 +8,6 @@ namespace AuthorAPI.Data
     public interface IAuthorService
     {
         Task<IList<Author>> GetAuthorsAsync();
-        Task AddAuthorAsync(Author newAuthor);
+        Task<Author> AddAuthorAsync(Author newAuthor);
         }
 }
